@@ -30,3 +30,8 @@ code {
   width: 100%;
   height: 100%;
 }
+
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  pointer-events: none;
+}

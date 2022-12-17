@@ -6,7 +6,6 @@ const AppPage: React.FC = () => {
   return (
     <Paper elevation={0} square className="body">
       <SearchInput />
-      AppPage
     </Paper>
   );
 };
