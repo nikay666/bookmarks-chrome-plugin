@@ -1,0 +1,17 @@
+.root {
+  
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px;
+  padding-top: 100px;
+}
+
+.bookmarkGrid {}
+
+.search {
+  /* margin-top: 100px; */
+}

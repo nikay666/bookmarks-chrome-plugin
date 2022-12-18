@@ -1,7 +1,12 @@
 *,
 *:after,
 *:before {
-  box-sizing: inherit;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100vh;
+  width: 100vw;
 }
 
 body {
@@ -11,9 +16,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  height: 100vh;
-  width: 100vw;
 }
 
 #root {
@@ -21,14 +23,9 @@ body {
   width: 100vw;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 .body {
-  width: 100%;
-  height: 100%;
+  height: 100vh;
+  width: 100vw;
 }
 
 input[type="search"]::-webkit-search-cancel-button {

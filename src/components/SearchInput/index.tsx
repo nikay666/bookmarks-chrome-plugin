@@ -16,7 +16,7 @@ const StyledInput = styled(InputBase)({
   borderRadius: spacing(6),
   border: `1px solid ${palette.grey[700]}`,
   padding: `${spacing(1)} ${spacing(4)}`,
-  width: SEARCH_INPUT_WIDTH,
+  width: "100%",
 });
 
 interface Props {
@@ -43,7 +43,11 @@ const SearchInput: React.FC<Props> = ({
   };
 
   return (
-    <form onSubmit={submitHandler} className={className}>
+    <form
+      onSubmit={submitHandler}
+      className={className}
+      style={{ width: SEARCH_INPUT_WIDTH }}
+    >
       <StyledInput
         {...{
           id: "search",
