@@ -1,7 +1,7 @@
-import React from "react";
-import EditIcon from "@mui/icons-material/Edit";
-import DeleteIcon from "@mui/icons-material/Delete";
-import { StyledIconButton, StyledStack } from "./styles";
+import React from 'react';
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
+import { StyledIconButton, StyledStack } from './styles';
 
 export interface Props {
   className?: string;
@@ -15,27 +15,27 @@ const BookmarkCardButtons: React.FC<Props> = ({
   onDelete,
 }) => {
   const editHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
-    console.log("EDIT", e);
+    console.log('EDIT', e);
     onEdit?.(e);
   };
   const deleteHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
-    console.log("DELETE", e);
+    console.log('DELETE', e);
     onDelete?.(e);
   };
 
   return (
     <StyledStack
       {...{
-        direction: "row",
-        justifyContent: "space-between",
+        direction: 'row',
+        justifyContent: 'space-between',
         alignItems: 'end',
         spacing: 32,
       }}
     >
       <StyledIconButton
         {...{
-          size: "small",
-          "aria-label": "Edit",
+          size: 'small',
+          'aria-label': 'Edit',
           onClick: editHandler,
         }}
       >
@@ -43,8 +43,8 @@ const BookmarkCardButtons: React.FC<Props> = ({
       </StyledIconButton>
       <StyledIconButton
         {...{
-          size: "small",
-          "aria-label": "Delete",
+          size: 'small',
+          'aria-label': 'Delete',
           onClick: deleteHandler,
         }}
       >

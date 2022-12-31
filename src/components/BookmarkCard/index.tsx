@@ -1,12 +1,13 @@
-import Card from "@mui/material/Card";
-import { styled } from "@mui/material/styles";
-import React from "react";
+import React from 'react';
 
-import style from "./index.module.css";
-import { theme } from "../../theme";
-import BookmarkCardButtons from "./components/BookmarkCardButtons";
-import { Bookmark } from "./types";
-import classNames from "classnames";
+import classNames from 'classnames';
+
+import { theme } from '~/theme';
+
+import BookmarkCardButtons from './components/BookmarkCardButtons';
+import style from './index.module.css';
+import { StyledBookmarkCard } from './styles';
+import { Bookmark } from './types';
 
 export interface BookmarkCardProps {
   className?: string;
@@ -14,21 +15,15 @@ export interface BookmarkCardProps {
   width?: string;
 }
 
-const StyledCard = styled(Card)({
-  minWidth: 200,
-  height: 140,
-  position: "relative",
-});
-
 const BookmarkCard: React.FC<BookmarkCardProps> = ({
   className,
   content,
-  width = "",
+  width = '',
 }) => {
   const { name, url, customization } = content;
 
   return (
-    <StyledCard
+    <StyledBookmarkCard
       {...{
         className: classNames(style.root, className),
 
@@ -40,7 +35,7 @@ const BookmarkCard: React.FC<BookmarkCardProps> = ({
         {...{
           className: style.link,
 
-          "aria-label": name,
+          'aria-label': name,
           href: url,
           style: {
             backgroundColor: customization.backgroundColor,
@@ -78,8 +73,8 @@ const BookmarkCard: React.FC<BookmarkCardProps> = ({
               src: customization?.logo.url,
               alt: customization?.logo.name,
               style: {
-                height: customization?.logo.height || "",
-                width: customization?.logo.width || "",
+                height: customization?.logo.height || '',
+                width: customization?.logo.width || '',
               },
             }}
           />
@@ -100,7 +95,7 @@ const BookmarkCard: React.FC<BookmarkCardProps> = ({
         )}
       </a>
       <BookmarkCardButtons />
-    </StyledCard>
+    </StyledBookmarkCard>
   );
 };
 

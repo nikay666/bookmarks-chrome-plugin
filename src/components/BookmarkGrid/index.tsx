@@ -1,10 +1,13 @@
-import React from "react";
-import BookmarkCard from "../BookmarkCard";
-import { Bookmark } from "../BookmarkCard/types";
-import { styled } from "@mui/material/styles";
-import { Stack } from "@mui/material";
+import React from 'react';
 
-import { theme } from "../../theme";
+import { Stack } from '@mui/material';
+import { styled } from '@mui/material/styles';
+
+import { theme } from '~/theme';
+
+import BookmarkCard from '../BookmarkCard';
+import AddBookmarkCard from '../BookmarkCard/components/AddBookmarkCard';
+import { Bookmark } from '../BookmarkCard/types';
 
 const { spacing } = theme;
 
@@ -15,10 +18,10 @@ export interface Props {
 }
 
 const StyledBookmarkGrid = styled(Stack)({
-  width: "100%",
-  flexDirection: "row",
-  flexWrap: "wrap",
-  alignItems: "center",
+  width: '100%',
+  flexDirection: 'row',
+  flexWrap: 'wrap',
+  alignItems: 'center',
   gap: spacing(4),
 });
 
@@ -33,10 +36,15 @@ const BookmarkGrid: React.FC<Props> = ({
   const width = getCalculatedWidthBookmarkCard(columnCount);
 
   return (
-    <StyledBookmarkGrid>
-      {bookmarks.map((bookmark) => (
-        <BookmarkCard key={bookmark.id} content={bookmark} width={width} />
+    <StyledBookmarkGrid className={className}>
+      {bookmarks.map(bookmark => (
+        <BookmarkCard
+          key={bookmark.id}
+          content={bookmark}
+          width={width}
+        />
       ))}
+      <AddBookmarkCard width={width} />
     </StyledBookmarkGrid>
   );
 };
