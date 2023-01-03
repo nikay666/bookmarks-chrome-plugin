@@ -13,13 +13,13 @@ import { testBookmarks } from '~/testBookmarks';
 
 import style from './index.module.css';
 
-const AppPage: React.FC = () => {
+interface Props {
+  className?: string;
+}
+
+const AppPage: React.FC<Props> = ({ className }) => {
   return (
-    <Paper
-      elevation={0}
-      square
-      className={classNames(style.root, 'body')}
-    >
+    <Paper elevation={0} square className={classNames(style.root, 'body')}>
       <Container maxWidth="lg">
         <div className={style.container}>
           <SearchInput className={style.search} />

@@ -1,26 +1,26 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
-import AppPage from "./pages/app";
-import SettingsPage from "./pages/settings";
+import { ThemeProvider } from '@mui/material/styles';
 
-import "./index.css";
-
-import { theme } from "./theme";
-import { ThemeProvider } from "@mui/material/styles";
+import './index.css';
+import { SettingsPanelBackground, SettingsPanelBase } from './modules/settings';
+import AppPage from './pages/app';
+import SettingsPage from './pages/settings';
+import { theme } from './theme';
 
 const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
+  document.getElementById('root') as HTMLElement,
 );
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <AppPage />,
   },
   {
-    path: "/settings",
+    path: '/settings',
     element: <SettingsPage />,
   },
 ]);
@@ -30,5 +30,5 @@ root.render(
     <ThemeProvider theme={theme}>
       <RouterProvider router={router} />
     </ThemeProvider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
