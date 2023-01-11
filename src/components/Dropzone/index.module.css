@@ -1,0 +1,24 @@
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4px;
+
+  padding: 32px 8px;
+  border: dashed 1px white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.input {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.icon {
+  margin-bottom: 8px;
+}
