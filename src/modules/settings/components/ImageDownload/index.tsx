@@ -4,7 +4,6 @@ import { InputBase, TextField } from '@mui/material';
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 
-
 import Dropzone from '~/components/Dropzone';
 
 interface Props {
@@ -19,10 +18,7 @@ const ImageDownload: React.FC<Props> = ({ className }) => {
         <Tab label="С компьютера" />
       </Tabs>
       <div>
-        {/* <TextField fullWidth label="Ссылка на изображение" />
-
-        <TextField fullWidth label="Открыть" type="file" /> */}
-        <Dropzone/>
+        <Dropzone />
       </div>
     </>
   );

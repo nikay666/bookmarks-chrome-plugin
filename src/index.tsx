@@ -5,9 +5,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material/styles';
 
 import './index.css';
-import { SettingsPanelBackground, SettingsPanelBase } from './modules/settings';
 import AppPage from './pages/app';
-import SettingsPage from './pages/settings';
 import { theme } from './theme';
 
 const root = ReactDOM.createRoot(
@@ -18,10 +16,6 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <AppPage />,
-  },
-  {
-    path: '/settings',
-    element: <SettingsPage />,
   },
 ]);
 

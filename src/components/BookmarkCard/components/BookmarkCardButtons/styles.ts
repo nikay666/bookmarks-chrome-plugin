@@ -1,7 +1,8 @@
 import IconButton from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
-import { theme } from '../../../../theme';
+
+import { theme } from '~/theme';
 
 const { palette, transitions } = theme;
 
