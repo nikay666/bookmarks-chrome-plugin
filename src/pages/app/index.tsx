@@ -12,12 +12,16 @@ import SearchInput from '~/components/SearchInput';
 import { testBookmarks } from '~/testBookmarks';
 
 import style from './index.module.css';
+import { initStorage } from '~/api/localStorage';
 
 interface Props {
   className?: string;
 }
 
 const AppPage: React.FC<Props> = ({ className }) => {
+  // console.log(chrome.storage.local)
+  initStorage()
+
   return (
     <Paper elevation={0} square className={classNames(style.root, 'body')}>
       <Container maxWidth="lg">

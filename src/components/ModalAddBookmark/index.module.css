@@ -1,0 +1,11 @@
+.root {}
+
+.content {}
+
+.base {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 24px;
+}
+
+.collapsed {}

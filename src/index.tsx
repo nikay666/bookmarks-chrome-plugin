@@ -1,28 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
 import { ThemeProvider } from '@mui/material/styles';
 
+import AppPage from '~/pages/app';
+
+import {store} from '~/store';
+import { theme } from '~/theme';
+
 import './index.css';
-import AppPage from './pages/app';
-import { theme } from './theme';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
 );
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <AppPage />,
-  },
-]);
-
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <RouterProvider router={router} />
+      <Provider store={store}>
+        <AppPage />
+      </Provider>
     </ThemeProvider>
   </React.StrictMode>,
 );

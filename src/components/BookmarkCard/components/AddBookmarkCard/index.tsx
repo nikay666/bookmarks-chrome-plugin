@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import AddIcon from '@mui/icons-material/Add';
 import IconButton from '@mui/material/IconButton';
 import { styled } from '@mui/material/styles';
 
 import classNames from 'classnames';
+
+import ModalAddBookmark from '~/components/ModalAddBookmark';
 
 import { theme } from '~/theme';
 
@@ -36,26 +38,34 @@ const StyledAddBookmarkCardn = styled(StyledBookmarkCard)({
 });
 
 const AddBookmarkCard: React.FC<Props> = ({ className, width = '' }) => {
-  return (
-    <StyledAddBookmarkCardn
-      {...{
-        className: classNames(className, style.root),
+  const [isOpen, setIsOpen] = useState(false);
+  const handleClick = () => setIsOpen(true);
+  const handleClose = () => setIsOpen(false);
 
-        style: { width },
-      }}
-    >
-      <StyledIconButton
+  return (
+    <>
+      <StyledAddBookmarkCardn
         {...{
-          sx: {
-            fontSize: 40,
-          },
-          'aria-label': 'Add new',
+          className: classNames(className, style.root),
+
+          style: { width },
         }}
-        className={style.icon}
       >
-        <AddIcon fontSize="inherit" />
-      </StyledIconButton>
-    </StyledAddBookmarkCardn>
+        <StyledIconButton
+          {...{
+            sx: {
+              fontSize: 40,
+            },
+            'aria-label': 'Add new',
+          }}
+          className={style.icon}
+          onClick={handleClick}
+        >
+          <AddIcon fontSize="inherit" />
+        </StyledIconButton>
+        <ModalAddBookmark isOpen={isOpen} onClose={handleClose} />
+      </StyledAddBookmarkCardn>
+    </>
   );
 };
 
